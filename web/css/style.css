@@ -1,0 +1,214 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 9, 2015, 10:10:28 AM
+    Author     : Rashidi
+*/
+
+//****** FONT *****/>
+@font-face{
+    font-family: 'titleFont';
+    src:url('../font/W_bardia.ttf');
+}
+@font-face{
+    font-family: 'firstFont';
+    src:url('../font/BMitra_0.ttf');
+}
+//<****** FONT *****/
+
+body{
+    direction: rtl;
+    font-family: firstFont;
+
+}
+.mainDiv{
+    width: 100%;
+}
+.headerDiv{
+    width: 100%;
+    height: 100px;
+    border: 1px black solid;
+}
+.contentDiv{
+    margin: 5px;
+    width: 97.5%;
+    padding: 10px;
+    height: auto;
+    font-family: firstFont;
+    border:1px #999999 solid;
+    border-radius: 8px;
+}
+.mainDiv{
+
+}
+.table{
+    text-align: center;
+    border: 2px #666666 solid;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 2px;
+    margin:auto;
+    width: 90%;
+}
+.tableDiv{
+    height: 400px;
+    overflow-y: scroll;
+}
+.table tr th,.table tr td
+{
+    border:1px solid #3D3D3D;
+    border-radius: 8px;
+    margin:1px;
+}
+.tableHeader th{
+    background-color:#7FB5DA;
+    /*background-color:rgb(159,176,236);*/
+}
+.evenRow td{
+    background-color: white;
+}
+.oddRow td{
+    background-color: rgb(235,235,235);
+}
+.iconImages{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.formDiv{
+    min-height: 400px;
+    display: none;
+    /*padding: 10px;*/
+    overflow-y: scroll;
+}
+.list{
+    list-style: none;
+    width: 100%;
+    /*padding: 2px;*/
+    float: right;
+    list-style: none;
+}
+.list li{
+    min-width: 130px;
+    /*margin: 10px;*/
+    float: right;
+    display: inline;
+}
+.list li span{
+    float: right;
+    /*    margin: 10px;*/
+    font-size: 20px;
+}
+.inputText{
+    margin-right: 10px;
+    width: 400px;
+    height: 25px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    float: right;
+    direction: rtl;
+}
+.inputText:hover{
+    border-color: black;
+}
+.inputText:focus{
+    border-color: black;
+}
+.textArea{
+    border: 1px solid #999999;
+    border-radius: 5px;
+    width: 400px;
+    height: 120px;
+    margin-right: 10px;
+    direction: rtl;
+    overflow-y: scroll;
+}
+.textArea:hover{
+    border-color: black;
+}
+.textArea:focus{
+    border-color: black;
+}
+.floatBox{
+    z-index: 1000;
+    position: absolute;
+    height:auto;
+    background:#7FB5DA;
+    border:2px solid #999;
+    border-radius: 8px;
+    padding: 5px;
+    right:43%;
+    margin: 5px;
+    display: none;
+}
+//****** Tabs *****/>
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+/*.tab-links{
+    margin-right: 9%;
+}*/
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+    margin-bottom: -7px;//ADDED
+}
+
+.tab-links li {
+    margin:0px 5px;
+    float:right;
+    list-style:none;
+}
+
+.tab-links a {
+    padding:9px 15px;
+    /*display:inline-block;*/
+    border-radius:5px 5px 0px 0px;
+    background:#7FB5DA;
+    font-size:20px;
+    font-weight:600;
+    /*color:#4c4c4c;*/
+    color:black;
+    transition:all linear 0.15s;
+    text-decoration: none;
+    border:1.5px solid #999999;
+}
+
+.tab-links a:hover {
+    background:#a7cce5;
+}
+
+li.active a, li.active a:hover {
+    /*background:#cccccc;*/
+    background:#fff;
+    color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+    margin:0px auto;
+    /*    width: 80%;*/
+    direction: rtl;
+    padding:15px;
+    border:2px solid #999999;
+    border-radius:10px;
+    /*box-shadow:-1px 1px 1px rgba(0,0,0,0.15);*/
+    background:#fff;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+///Tabs

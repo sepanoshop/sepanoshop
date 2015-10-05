@@ -1,0 +1,94 @@
+.body{
+    direction:rtl;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:9pt;
+    margin:0 auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.tahoma7{
+    font-size: 7pt;
+}
+.tahoma8{
+    font-size: 8pt;
+}
+.tahoma9{
+    font-size: 9pt;
+}
+.tahoma10{
+    font-size: 10pt;
+}
+.tahoma11{
+    font-size: 11pt;
+}
+.tahoma12{
+    font-size: 12pt;
+}
+.tahoma13{
+    font-size: 13pt;
+}
+.tahoma7 , .tahoma8 , .tahoma9, .tahoma10 , .tahoma11, .tahoma12, .tahoma13 {
+    font-family:Tahoma;
+    padding: 0px;
+    font-weight: normal;
+}
+txtarea{
+    direction:rtl;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:10pt;
+    margin:0 auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.mousePointer{
+    cursor: pointer;
+}
+.hand{
+    cursor: pointer;
+}
+
+a{
+    cursor:pointer;
+    text-decoration:none;
+}
+
+marquee,option,select,input {
+    font-size: 10pt;
+    font-family:Tahoma; 
+    margin: 0px;
+}
+button{
+    font-size: 10pt;
+    font-family:Tahoma; 
+    margin: 0px;
+}
+pre {
+    background-color: #eaeaf4;
+}
+.cke_button_myDialogCmd .cke_icon
+{
+    display: none !important;
+}
+
+.cke_button_myDialogCmd .cke_label
+{
+    display: inline !important;
+}
+.c{
+    text-align: center;
+}
+.r{
+    text-align: right;
+}
+.l{
+    text-align: left;
+}
+.p{
+    cursor:pointer;
+}
+/* portal */
+.imgRfsh img{
+    max-width: 20%;
+    max-height: 100px;
+}

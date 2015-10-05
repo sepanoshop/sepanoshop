@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+        <style type="text/css">
+            /* 'star-rating' component */
+            .starRate {position:relative; overflow:hidden; zoom:1;}
+            .starRate ul {width:160px; margin:20px; padding:0;}
+            .starRate li {display:inline; list-style:none;}
+            .starRate a, .starRate b {background:url(img/star_rate.gif) left top repeat-x;}
+            .starRate a {float:right; margin:0 80px 0 -144px; width:80px; height:16px; background-position:left 16px; color:#000; text-decoration:none;}
+            .starRate a:hover {background-position:left -32px;}
+            .starRate b {position:absolute; z-index:-1; width:80px; height:16px; background-position:left -16px;}
+            .starRate div b {left:0px; bottom:0px; background-position:left top;}
+            .starRate a span {position:absolute; left:-300px;}
+            .starRate a:hover span {left:90px; width:100%;}
+        </style>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;" dir="rtl">
+        <table style="width: 100%;padding: 1px">
+            <tr>
+                <td style="text-align: right;padding: 5px">
+                    <input type="hidden" id="news_id" name="id" />
+                    <input type="hidden" id="news_parent" name="news_parent" value="0"/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:85%">
+                                <table>
+                                    <tr id="NewsIDTr">
+                                        <td style="text-align: right;padding: 0px">
+                                            عنوان:   
+                                        </td>
+                                        <td style="text-align: right;padding: 0px">
+                                            <input type="text" id="news_title" name="news_title"  class="tahoma10" style="width:600px;padding: 0 1px 0 0"/>
+                                            <select id="news_lang" name="news_lang"  class="tahoma10" style="width: 80px" disabled="disabled">
+                                                <option value="1">فارسی</option>
+                                                <option value="2">English</option>
+                                                <option value="3">عربی</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right;padding: 0px">
+                                            دسته:
+                                        </td>
+                                        <td style="text-align: right;padding: 0px;">
+                                            <select id="news_category_id_select" name="news_category_id"  class="tahoma10" style="width: 604px;">
+                                                <option value="1">گوناگون</option>
+                                            </select>                                            
+                                            <input type="button" class="tahoma10" style="width: 29px;" value="+" onclick="$( '#tabs' ).tabs({selected:2});$('#swNewsAll').tabs({selected:1});" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right;padding: 0px">
+                                            تصویر:
+                                        </td>
+                                        <td style="text-align: right;padding: 0px">
+                                            <input type="text" id="news_pic" name="news_pic"  class="tahoma10" style="width: 600px;direction: ltr"/>
+                                            <input type="button" class="tahoma10" style="width: 29px;" value="+" onclick="$( '#tabs' ).tabs({selected:3});$('#swPicAll').tabs({selected:0});" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            تاریخ :
+                                        </td>
+                                        <td>
+                                            <input type="text" id="news_date" name="news_date"  class="tahoma10" style="width: 260px"/>
+                                            <span style="text-align:left">                                                
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                اولویت:                               
+                                                <select id="news_priority" name="news_priority"  class="tahoma10" style="width: 260px;" >
+                                                    <option value="1" selected="selected">اسلاید</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </span>
+                                        </td>
+                                    </tr>                                    
+                                </table > 
+                            </td>
+                            <td style="width:15%" >
+                                <table >                        
+                                    <tr>                                        
+                                        <td style="width: 30%;text-align: center;">
+                                            <img id="news_pic_name_preview" src="img/news.png" style="max-width: 150px;vertical-align: central;"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>                    
+                </td>
+            </tr>
+            <tr >
+                <td style="text-align: right;padding: 0px">
+                    خلاصه:
+                </td>                           
+            </tr>
+            <tr>
+                <td style="text-align: right;padding: 0px;width: 100%">
+                    <textarea id="news_abstract" name="news_abstract"  class="tahoma10" style="width: 99%" rows="4" cols="72"></textarea>
+                </td> 
+            </tr>
+            <tr>
+                <td style="text-align: right;padding: 0px">
+                    محتوا
+                    <textarea id="news_content"  name="news_content"  rows="4" cols="72" class="tahoma10" ></textarea>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++-->                                
+                                    بازدید
+                                    <input id="news_visit_checkbox" class="ui-state-default ui-corner-all" type="checkbox" checked="checked" 
+                                           onclick='$("#news_visit").prop("disabled",!$("#news_visit").prop("disabled"));$("#news_visit").val(-1*+$("#news_visit").val());'/>
+                                    <input type="number" id="news_visit" min="0" value="0" name="news_visit"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    تعداد موافقت ها
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++--> 
+                                    <input id="news_likes_checkbox" class="ui-state-default ui-corner-all" type="checkbox" checked="checked" 
+                                           onclick='$("#news_likes").prop("disabled",!$("#news_likes").prop("disabled"));$("#news_likes").val(-1*+$("#news_likes").val());'/>
+                                    <input type="number" id="news_likes" min="0" value="0" name="news_likes"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    تعداد مخالفت ها
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++--> 
+                                    <input id="news_disLikes_checkbox" class="ui-state-default ui-corner-all" type="checkbox" checked="checked" 
+                                           onclick='$("#news_disLikes").prop("disabled",!$("#news_disLikes").prop("disabled"));$("#news_disLikes").val(-1*+$("#news_disLikes").val());'/>
+                                    <input type="number" id="news_disLikes"  min="0" value="0" name="news_disLikes"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                </td>
+            </tr>
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right">
+                    <div style="float: right">
+                        <a id="cancel_News" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="News_button" style="position: relative;float: right" >
+                    </div>
+                    <div style="text-align: left;position: relative;float: left">
+                        <input type="file" id="upload_News_file" name="upload_News_file" style="width: 300px;"/>
+                        <a id="upload_News" >
+                            ارسال تصویر
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>        
+    </body>
+</html>
+

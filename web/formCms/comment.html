@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <table style="width: 100%;padding: 1px">
+            <tr>
+                <td style="text-align: right;padding: 5px">
+                    <table  style="width: 100%;padding: 1px">
+                        <tr>
+                            <td style="text-align: right;padding: 5px;width: 9%">
+                                نام:
+                            </td>
+                            <td style="text-align: right;padding: 5px;width: 41%">
+
+                                <input type="hidden" id="comment_id" name="id" />
+                                <input type="text" id="comment_full_name" name="comment_full_name"  class="tahoma10" style="width: 90%" disabled="disabled"/>
+                            </td>
+                            <td style="text-align: right;padding: 5px;width: 9%">
+                                ایمیل:
+                            </td>
+                            <td style="text-align: right;padding: 5px;width: 41%">
+                                <input type="text" id="comment_email" name="comment_email"  class="tahoma10" style="width: 90%;text-align: left;direction: ltr" disabled="disabled"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;padding: 5px;">
+                                عنوان:
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <input type="text" id="comment_title" name="comment_title"  class="tahoma10" style="width: 90%;text-align: right" disabled="disabled"/>
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                تلفن:
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <input type="text" id="comment_tell" name="comment_tell"  class="tahoma10" style="width: 90%;text-align: left" disabled="disabled"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;padding: 5px;">
+                                پیغام:
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <textarea id="comment_text"  name="comment_text"  rows="6" cols="72" class="tahoma10" style="width: 90%;"></textarea>
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                پاسخ مدیر:
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <textarea id="comment_answer"  name="comment_answer"  rows="6" cols="72" class="tahoma10" style="width: 90%" ></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;padding: 5px;">
+                                تاریخ ارسال:
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <input type="text" id="comment_date" name="comment_date"  class="tahoma10" style="width: 90%;text-align: left;direction: ltr" disabled="disabled"/>
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                &nbsp;
+                            </td>
+                            <td style="text-align: right;padding: 5px;">
+                                <input type="button" class="tahoma10" style="width: 90%;" id="sendEmailBtn" value="ارسال پاسخ شما به ایمیل"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right">
+                    <div style="float: right">
+                        <a id="cancel_Comment" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="Comment_button" style="position: relative;float: right">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <table style="width: 100%;padding: 1px">
+            <tr>
+                <td style="text-align: right;padding: 5px">
+                    <input type="hidden" id="content_id" name="id" />
+                    <input type="hidden" id="content_parent" name="content_parent" value="0"/>
+                    عنوان:   
+                    <input type="text" id="content_title" name="content_title" class="tahoma10" style="width: 84%"/>
+                    <select id="content_lang" name="content_lang"  class="tahoma10" style="width: 10%;" disabled="disabled">
+                        <option value="1">فارسی</option>
+                        <option value="2">English</option>
+                        <option value="3">عربی</option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                <td  class="tahoma10">
+                    <textarea id="content_html"  name="content_content"  rows="6" cols="72" class="tahoma10"></textarea>
+
+                </td>
+            </tr>
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right;">
+                    <div style="float: right">
+                        <a id="cancel_Content" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="Content_button" style="position: relative;float: right">
+                    </div>
+                    <div style="text-align: left;position: relative;float: left">
+                        <input type="file" id="upload_Content_file" name="upload_Content_file" style="width: 300px;"/>
+                        <a id="upload_Content" >
+                            ارسال تصویر
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

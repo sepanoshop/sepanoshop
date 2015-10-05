@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://www.sepahansms.com/smsSendWebServiceforphp.asmx?wsdl" uri="src/conf/xml-resources/web-service-references/smsSendWebServiceforphp/wsdl/www.sepahansms.com/smsSendWebServiceforphp.asmx.wsdl"/>
+    <system systemId="http://www.sepahansms.net/smsSendWebServiceforphp.asmx?wsdl" uri="src/conf/xml-resources/web-service-references/smsSendWebServiceforphp/wsdl/www.sepahansms.net/smsSendWebServiceforphp.asmx.wsdl"/>
+    <system systemId="http://api.kavenegar.com/soap/v1.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/v1/wsdl/api.kavenegar.com/soap/v1.asmx.wsdl"/>
+</catalog>

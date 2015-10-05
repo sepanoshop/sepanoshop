@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <table style="width: 100%;">
+            <tr>
+                <td style="text-align: right;padding: 5px;width: 70%">
+                    <table style="width: 100%;padding: 1px">
+                        <tr>
+                            <td style="text-align: right;">
+                                <input type="hidden" id="pic_id" name="id" />
+                                <input type="hidden" id="pic_parent" name="pic_parent" />
+                                عنوان:   
+                            </td>
+                            <td style="text-align: right;">  
+                                <input type="text" id="pic_title" name="pic_title"  class="tahoma10" style="width: 400px"/>
+                                <select id="pic_lang" name="pic_lang"  class="tahoma10" style="width: 10%;" disabled="disabled">
+                                    <option value="1">فارسی</option>
+                                    <option value="2">English</option>
+                                    <option value="3">عربی</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">
+                                دسته:
+                            </td>
+                            <td style="text-align: right;">
+                                <select id="pic_gallery_id_select" name="gallery_id"  class="tahoma10" style="width: 405px;">
+                                    <option value="1">گوناگون</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">
+                                تصویر:
+                            </td>
+                            <td style="text-align: right;">
+                                <input type="text" id="pic_pic_name" name="pic_pic_name"  class="tahoma10" style="width: 400px;text-align: left"/>
+                            </td>
+                        </tr>
+                        <tr style="display: none">
+                            <td style="text-align: right;display: none">
+قیمت:
+                            </td>
+                            <td style="text-align: right;display: none">
+                                <input type="text" id="pic_price" name="pic_price"  class="tahoma10" style="width: 400px;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr style="display: none">
+                            <td style="text-align: right;display: none">
+فاصله لبه:
+                            </td>
+                            <td style="text-align: right;display: none">
+                                <input type="text" id="pic_margin" name="pic_margin"  class="tahoma10" style="width: 400px;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">
+توضیحات:
+                            </td>
+                            <td style="text-align: right;">
+                                <input type="text" id="pic_comment" name="pic_comment"  class="tahoma10" style="width: 400px;text-align: right;direction: rtl"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 20%;text-align: center">
+                    <img id="pic_pic_name_preview" src="img/preview.jpg" style="width: 150px;direction: ltr" />
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%">
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right;width: 70%;vertical-align: top">
+                    <div style="float: right">
+                        <a id="cancel_Pic" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="Pic_button" style="position: relative;float: right">
+                    </div>
+                    <div style="text-align: left;position: relative;float: left">
+                        <input type="file" id="pic_pic_file" name="pic_pic_file" style="width: 300px;"/>
+                        <input type="button" id="sendPic" name="sendPic"  class="tahoma10" style="width: 90px;" value="ارسال" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

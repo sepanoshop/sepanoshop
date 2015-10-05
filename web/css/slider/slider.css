@@ -1,0 +1,57 @@
+.slnew{
+}
+.imgsln{
+	height:240px;
+	margin-right:30px;
+	border:3px #000 double;
+}
+#newsticker-demo {
+    width:730px;
+    overflow:hidden;
+    border-top: 1px solid #dddddd;
+	z-index:9;
+	margin-left:20px;
+}
+#newsticker-demo .title {
+    font-size:14px;
+    font-family: tahoma;
+    font-weight:bold;
+    padding:5px;
+}
+#newsticker-demo p {
+    margin:0px;
+    padding: 10px 0px 0px 20px;
+}
+#newsticker-demo ul {}
+#newsticker-demo li {
+    list-style:none;
+    display:block;
+    padding:7px 0px;
+    border-bottom: 1px solid #dddddd;
+    height:250px;
+    font-family: Tahoma;
+    font-size:13px;
+    text-align:right;
+}
+#newsticker-demo li a {
+    color:#909;
+    font-size:13px;
+	font-weight:bold;
+    text-decoration:none;
+}
+.previous {
+    outline:none;
+    cursor:pointer;
+    margin-left:145px;
+    vertical-align: bottom;
+}
+.next {
+    outline:none;
+    cursor:pointer;
+    margin-left:145px;
+    position:relative;
+    top:4px;
+    left:710px;
+    float:right;
+    vertical-align: top;
+}

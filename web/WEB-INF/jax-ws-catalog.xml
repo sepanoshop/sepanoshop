@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://raygansms.com/TrezSmsService.asmx?WSDL" uri="wsdl/raygansms.com/TrezSmsService.asmx.wsdl"/>
+    <system systemId="file:/C:/Users/Mohammad/Downloads/TrezSmsService.asmx" uri="wsdl/TrezSmsService.asmx.wsdl"/>
+    <system systemId="http://www.raygansms.com/TrezSmsService.asmx?WSDL" uri="wsdl/www.raygansms.com/TrezSmsService.asmx.wsdl"/>
+    <system systemId="file:/C:/Users/MOHAMMAD/Documents/NetBeansProjects/001/web/TrezSmsService.asmx" uri="wsdl/TrezSmsService.asmx.wsdl"/>
+    <system systemId="http://login.parsgreen.com/Api/SendSMS.asmx?WSDL" uri="wsdl/login.parsgreen.com/Api/SendSMS.asmx.wsdl"/>
+    <system systemId="http://sms.trez.ir/TrezSmsService.asmx?WSDL" uri="wsdl/sms.trez.ir/TrezSmsService.asmx.wsdl"/>
+    <system systemId="http://api.kavenegar.com/soap/v1.asmx?WSDL" uri="wsdl/api.kavenegar.com/soap/v1.asmx.wsdl"/>
+    <system systemId="http://www.sepahansms.com/smsSendWebServiceforphp.asmx?wsdl" uri="wsdl/www.sepahansms.com/smsSendWebServiceforphp.asmx.wsdl"/>
+    <system systemId="http://www.sepahansms.net/smsSendWebServiceforphp.asmx?wsdl" uri="wsdl/www.sepahansms.net/smsSendWebServiceforphp.asmx.wsdl"/>
+</catalog>

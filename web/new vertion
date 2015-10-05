@@ -1,0 +1,23 @@
+data base :
+-----------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `db_iransepano`.`sms` ADD COLUMN `sms_subject` VARCHAR(45) NOT NULL DEFAULT 0 AFTER `sms_userId`; //ok has been added in my pc
+ALTER TABLE `db_hafteghlim`.`sms` CHARACTER SET utf8 COLLATE utf8_general_ci;//ok has been added in my pc
+ALTER TABLE `db_hafteghlim`.`sms` MODIFY COLUMN `sms_subject` VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 0;//ok has been added in my pc
+-------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop1` VARCHAR(45) NOT NULL DEFAULT 'قیمت' AFTER `portal_post_val1`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop2` VARCHAR(45) NOT NULL DEFAULT 'ظرفیت تولید' AFTER `portal_post_val2`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop3` VARCHAR(45) NOT NULL DEFAULT 'تکنولوژی' AFTER `portal_post_val3`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop4` VARCHAR(45) NOT NULL DEFAULT 'استاندارها' AFTER `portal_post_val4`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop5` VARCHAR(45) NOT NULL DEFAULT 'مزیت رقابتی' AFTER `portal_post_val5`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop6` VARCHAR(45) NOT NULL DEFAULT 'برند' AFTER `portal_post_val6`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop7` VARCHAR(45) NOT NULL DEFAULT 'برند' AFTER `portal_post_val7`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop8` VARCHAR(45) NOT NULL DEFAULT 'برند' AFTER `portal_post_val8`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop9` VARCHAR(45) NOT NULL DEFAULT 'برند' AFTER `portal_post_val9`;
+ALTER TABLE `db_iransepano`.`portal_post` ADD COLUMN `portal_post_prop10` VARCHAR(45) NOT NULL DEFAULT 'برند' AFTER `portal_post_val10`;
+ALTER TABLE `db_iransepano`.`portal_post` MODIFY COLUMN `portal_post_val2` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val3` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val4` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val5` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val6` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val7` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `db_iransepano`.`portal_post_val8` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,

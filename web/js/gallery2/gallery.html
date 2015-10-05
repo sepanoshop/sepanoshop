@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fancyBox - Fancy jQuery Lightbox Alternative | Demonstration</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Add jQuery library -->
+        <script type="text/javascript" src="js/jquery/jquery-1.7.2.min.js"></script>
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="js/gallery2/jquery.mousewheel-3.0.6.pack.js"></script>
+        <!-- Add fancyBox main JS and CSS files -->
+        <script type="text/javascript" src="js/gallery2/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="js/gallery2/jquery.fancybox.css?v=2.1.5" media="screen" />
+        <!-- Add Button helper (this is optional) -->
+        <link rel="stylesheet" type="text/css" href="js/gallery2/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+        <script type="text/javascript" src="js/gallery2/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+        <!-- Add Thumbnail helper (this is optional) -->
+        <link rel="stylesheet" type="text/css" href="js/gallery2/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+        <script type="text/javascript" src="js/gallery2/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+        <!-- Add Media helper (this is optional) -->
+        <script type="text/javascript" src="js/gallery2/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.galleryShow').fancybox();
+            });
+        </script>
+    </head>
+    <body>
+        <p>
+            <a class="galleryShow" href="upload/f_02565831.jpg" data-fancybox-group="gallery" title="test"><img src="upload/f_02565831_small.jpg" alt="" /></a>
+            <a class="galleryShow" href="upload/f_02875072.jpg" data-fancybox-group="gallery" title="تست"><img src="upload/f_02875072_small.jpg" alt="" /></a>
+        </p>
+    </body>
+</html>

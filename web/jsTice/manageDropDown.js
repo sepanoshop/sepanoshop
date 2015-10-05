@@ -1,0 +1,40 @@
+var manageDropDown ={
+    getListBookForLevel:function(){
+        jj("do=Tice_books.getBookList&panel=tice_level_book&selected="+jj('#tice_level_book').jjVal()).jjAjax2();
+    },
+    getListBookForClass:function(){
+        jj("do=Tice_books.getBookList&panel=ticeClass_Textbook&selected="+jj('#ticeClass_Textbook').jjVal()).jjAjax2();
+    },
+    getListRoomForClass:function(){
+        jj("do=Tice_rooms.getRoomList&panel=ticeClass_ClassroomId&selected="+jj('#ticeClass_ClassroomId').jjVal()).jjAjax2();
+    },
+    getListTeacherForClass:function(){
+        jj("do=Tice_teacher.getTeachersList&panel=ticeClass_TeacherId&selected="+jj('#ticeClass_TeacherId').jjVal()).jjAjax2();
+    },
+    getListTeacherForSalari:function(){
+        jj("do=Tice_teacher.getTeachersList&panel=ticeTeacherSalary_TeacherID&selected="+jj('#ticeClass_ClassroomId').jjVal()
+            +"&term="+jj('#ticeTeacherSalary_TermId').jjVal()).jjAjax2();
+    },
+    getListClassForRegist:function(){
+        jj("do=Tice_class.getClassList&panel=ticeEnrol_ClassId&selected="+jj('#ticeEnrol_ClassId').jjVal()
+            +"&term="+jj('#ticeEnrol_TermId').jjVal()).jjAjax2();
+    },
+    getListTermForRegist:function(){
+        jj("do=Tice_term.getTermList&panel=ticeEnrol_TermId&selected="+jj('#ticeEnrol_TermId').jjVal()).jjAjax2();
+    },
+    getListTermForClass:function(){
+        jj("do=Tice_term.getTermList&panel=ticeClass_TermId&selected="+jj('#ticeClass_TermId').jjVal()).jjAjax2();
+    },
+    getListTermForTeacherSalari:function(){
+        jj("do=Tice_term.getTermList&panel=ticeTeacherSalary_TermId&selected="+jj('#ticeTeacherSalary_TermId').jjVal()).jjAjax2();
+    }, 
+    getListLevelForClass:function(){
+        jj("do=Tice_level.getLevelList&panel=ticeClass_LevelId&selected="+jj('#ticeClass_LevelId').jjVal()).jjAjax2();
+    } ,
+    getListLevelForClass2:function(){
+        jj("do=Tice_level.getLevelList&panel=ticeClass_Prerequisite&selected="+jj('#ticeClass_Prerequisite').jjVal()).jjAjax2();
+    } ,
+    getListLevelForStudent:function(){
+        jj("do=Tice_level.getLevelList&panel=ticeStudents_StartingLevel&selected="+jj('#ticeStudents_StartingLevel').jjVal()).jjAjax2();
+    } 
+}

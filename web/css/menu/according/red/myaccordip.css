@@ -1,0 +1,180 @@
+/*
+
+note that : toggleList(id); in index.js run close and opening sub menu
+
+*/
+
+/* ##### Top level items #####*/
+#hierarchyListDiv 
+{
+    /* Note about height: 
+    Set "height:auto;" if flexible height is required. 
+    A fixed height is prefered as content below the menu won't be pulled down/up when the menu is expanding/collapsing. */
+    width: 32%;
+    float: right;
+}
+#hierarchyListDiv div.heading, #hierarchyListDiv a.link
+{
+    padding:8px 15px 8px 3px;
+    /*text-align:left;*/
+    font:normal 12px Verdana;
+    color:#DDD; 
+    background:#D00 url(bg00Red.gif) repeat-x 0 0;
+    text-decoration:none;
+    outline:none;
+} 
+#hierarchyListDiv div.current, #hierarchyListDiv div:hover, #hierarchyListDiv a.link:hover, #hierarchyListDiv div.current a.link
+{
+    color: #ff9966;
+    font-weight:bolder;
+    text-decoration:none;  
+    background-position:0 -64px;
+} 
+#hierarchyListDiv div.current
+{
+    font-weight: bolder;
+}
+/*Top level link without children*/
+#hierarchyListDiv a.current, #hierarchyListDiv a.current:hover
+{
+    color: #ff9966;
+    text-decoration:underline;   
+}
+/* arrow image for the top headings */
+#hierarchyListDiv div.arrowImage {
+    width:12px;
+    height:12px;
+    top:9px;
+    right:2px;  /*   Changing it to "left:4px;" will position the arrow image to the left */
+    background-image:url(arrows01.gif);
+    background-position:0 0;
+}
+#hierarchyListDiv div.separator
+{
+    border-top:1px solid #000;
+    border-bottom:none; 
+    padding: 0px;
+    height: 0px;
+}
+/* ##### Sub level items #####*/
+#hierarchyListDiv div.sub
+{
+    position: relative;
+    padding-right:5%; /*This determines the hierarchical offset */
+    /*padding-left:14px; This determines the hierarchical offset */ 
+}
+#hierarchyListDiv ul
+{
+    position: relative;
+    padding-right:4px; 
+    padding-left:4px;
+    overflow:hidden;	
+    margin:0;
+    list-style-type: none;
+}
+
+/*#hierarchyListDiv li
+{
+    position: relative;
+    padding-right:34px; 
+    padding-left:14px;
+}*/
+/*#hierarchyListDiv ul li ul li
+{
+    padding-right: 15px;
+}*/
+#hierarchyListDiv ul.sub div.heading
+{
+    /*    text-align:right;*/
+    font:normal 12px Arial;
+    padding:5px 5px 5px 20px;
+    color:#000;
+    background:none; 
+}
+/* #hierarchyListDiv ul.sub div.heading a
+{
+    color:#000;
+} */
+
+/* #hierarchyListDiv ul.sub div.current
+{
+    color:#000;
+    background:none; 
+}
+ */
+#hierarchyListDiv ul.sub a.link
+{
+    font:normal 11px Arial;
+    color:#000;
+    padding-top:5px;
+    padding-bottom:5px;
+    text-decoration:none;
+    background:none;     
+}
+#hierarchyListDiv ul.sub a.link:hover, #hierarchyListDiv ul.sub div.heading a:hover
+{
+    color: #cc0000;
+    text-decoration:underline;
+    background:none;
+}
+
+
+#hierarchyListDiv ul.sub div.arrowImage {
+    width:12px;
+    height:12px;
+    top:6px;
+    background-image:url(arrows01.gif);
+    background-repeat: no-repeat;
+    background-position:0 -24px;
+}
+#hierarchyListDiv div.closedList{
+    height: 30px;
+    overflow: hidden;
+}
+#hierarchyListDiv div.closedList.sub{
+    height: 25px;
+    overflow: hidden;
+}
+ #hierarchyListDiv div.openedList
+{
+    height: 100%;
+    background-color: #fff707;
+}
+ #hierarchyListDiv div.openedList div.heading div.arrowImage
+{
+    background-position: 0px -14px;
+}
+ #hierarchyListDiv div.openedList.sub div.arrowImage
+{
+    background-position: 0px -35px;
+}
+ #hierarchyListDiv div.closedList.sub div.arrowImage
+{
+    background-position: 0px -24px;
+}
+
+/* ##### Followings usually don't need modification ###### */
+/*Hack the font-size:0 bug for IE6 */
+#hierarchyListDiv 
+/*,  #hierarchyListDiv ul*/
+{
+    display:block;
+    text-align: right;
+    /*font-size:0px;*/
+    /*line-height:0px;*/
+    padding: 0px;
+}
+#hierarchyListDiv li {font-size:12px; height:24px;}
+#hierarchyListDiv li div{padding:5px 0 5px 0;}
+#hierarchyListDiv:after {content:'.';height:0;clear:both;display:block;} 
+
+/*Hack for IE6-7*/
+#hierarchyListDiv ul, #hierarchyListDiv li, #hierarchyListDiv div.heading, #hierarchyListDiv a.smLink, #hierarchyListDiv div.description {*zoom:1;}
+#hierarchyListDiv li {*float:right;*width:100%;}
+
+#hierarchyListDiv div.heading, #hierarchyListDiv div.current
+{
+    position:relative;
+    cursor: pointer;
+}
+#hierarchyListDiv div.arrowImage {position:absolute; overflow:hidden;}

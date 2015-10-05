@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../css/style1.css" type="text/css">
+    </head>
+    <body>  
+        <table style="width:100%">
+            <tr>                
+                <td>
+                    <table  dir="rtl" style=" width:100%;text-align: right ;padding-right: 1%">
+                        <tr>
+                            <td style ="width:10%;text-align: right ; " >
+                                کد کاربر:
+                            </td>
+                            <td style ="width:40%" >
+                                <select name="portal_user_UserId" id="portal_user_UserId" style="width:93%;">
+                                </select>
+                                <!-- portal_user_UserName is external key for cms_user-->
+                            </td>
+                            <td style ="width:10%;text-align: right ">
+                                کد پرتال:
+                            </td>
+                            <td style ="width:40%">
+                                <input id="portal_user_id" name="id" type="text" disabled="disabled" style="width: 93%;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ایمیل:
+                            </td>
+                            <td>
+                                <input id="portal_user_UserName" name="portal_user_UserName" disabled="disabled" type="text" style="width: 93%;direction: ltr"/>
+                                <!-- portal_user_UserName is external key for cms_user-->
+                            </td>
+                            <td>
+                                رمز عبور:
+                            </td>
+                            <td>
+                                <input name="portal_user_pass" id="portal_user_pass" disabled="disabled" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                نام:
+                            </td>
+                            <td>
+                                <input name="portal_user_firstName" id="portal_user_firstName" disabled="disabled" type="text" style="width: 93%"/>
+                            </td>
+                            <td style="text-align: right">
+                                نام خانوادگی:
+                            </td>
+                            <td style="color: black">
+                                <input name="portal_user_lastName" id="portal_user_lastName" disabled="disabled" type="text" style="width: 93%"/>
+                                <div id="studentBingInDatabase" style="color: red">
+                                </div>
+                            </td>
+                        </tr>                        
+                    </table>
+                    <br/>
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table dir="rtl" style=" width:100%;text-align: right ;padding-right: 1%">
+                        <tr>
+                            <td>
+                                <table style="width: 100%">
+                                    <tr >
+                                        <td style="text-align: right;width: 10%">
+                                            عنوان صفحه 
+                                        </td>
+                                        <td style="width: 40%">
+                                            <input name="portal_user_pageTitle1" id="portal_user_pageTitle1" type="text" style="width: 93%"/>
+                                        </td>
+                                        <td style="text-align: right;width: 10%"> 
+                                            توضیحات صفحه:
+                                        </td>
+                                        <td style="width: 40%">
+                                            <input name="portal_user_pageTitle2" id="portal_user_pageTitle2" type="text" style="width: 93%"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;padding: 0px">                    
+                                <div style="width: 200px;height:200px ">                        
+                                    <img id="preview_portalUser_pic" src="img/preview.jpg" style="width: 100%"/>
+                                </div>
+                                <input type="file" id="upload_portalUser_pic" name="upload_portalUser_pic" style="width: 200px;"/>
+                                <br/>
+                                <input type="text" id="portal_user_pic" name="portal_user_pic" style="width: 200px"/>
+                                <a id="upload_btn_portalUser_pic1" style="width: 100px;" >
+                                    ارسال تصویر 
+                                </a>                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea name="portal_user_content" id="portal_user_content" style="width: 97%">
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table dir="rtl" style=" width:98%;text-align: right ;padding-right: 1%">                        
+                        <tr>
+                            <td style="text-align: right;width: 10%">
+                                همراه(خصوصی):
+                            </td>
+                            <td style="text-align: right;width: 40%">
+                                <input name="portal_user_mobile" id="portal_user_mobile" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                            <td style="text-align: right;width: 10%">
+                                ثابت(خصوصی):
+                            </td>
+                            <td style="text-align: right;width: 40%">
+                                <input name="portal_user_phone" id="portal_user_phone" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"> 
+                                شماره تماس :
+                            </td>
+                            <td>
+                                <input name="portal_user_val1" id="portal_user_val1" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                            <td style="text-align: right">
+                                شماره تماس :
+                            </td>
+                            <td>
+                                <input name="portal_user_val2" id="portal_user_val2" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"> 
+                                شماره تماس :
+                            </td>
+                            <td>
+                                <input name="portal_user_val3" id="portal_user_val3" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                            <td style="text-align: right">
+                                شماره تماس :
+                            </td>
+                            <td>
+                                <input name="portal_user_val4" id="portal_user_val4" type="text" style="width: 93%;text-align: left;direction: ltr"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;">
+                                استان :
+                            </td>
+                            <td style="text-align: right;">  
+                                <select name="portal_user_val5" id="portal_user_val5" style="width:90%">
+                                </select>
+                                <input name="portal_user_val55" id="portal_user_val55" maxlength="45" style="width: 85%;text-align: right;direction: rtl;display: none" type="text">
+                                <input style="width: 20px;" id="btnChangeValComponent1" type="button" value="+" >
+                            </td>                            
+                            <td style="text-align: right;">
+                                شهر :
+                            </td>
+                            <td style="text-align: right;">  
+                                <select name="portal_user_val6" id="portal_user_val6" style="width:90%">
+                                </select>
+                                <input name="portal_user_val66" id="portal_user_val66" maxlength="45" style="width: 85%;text-align: right;direction: rtl;display: none" type="text">
+                                <input style="width: 20px;" id="btnChangeValComponent2" type="button" value="+" >
+                            </td>                            
+                        </tr>
+                        <!--                        <tr style="display: none">
+                                                    <td style="text-align: right ;display: none">
+                                                        فیلد اضافه2:
+                                                    </td>
+                                                    <td>
+                                                        <input name="portal_user_7" id="portal_user_7" type="text" style="width: 93%;"/>
+                                                    </td>                            
+                                                    <td style="text-align: right;display: none">
+                                                        فیلد اضافه5:
+                                                    </td>
+                                                    <td>
+                                                        <input name="portal_user_8" id="portal_user_8" type="text" style="width: 93%;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr style="display: none">
+                                                    <td style="text-align: right ;display: none">
+                                                        فیلد اضافه2:
+                                                    </td>
+                                                    <td>
+                                                        <input name="portal_user_9" id="portal_user_9" type="text" style="width: 93%;"/>
+                                                    </td>                            
+                                                    <td style="text-align: right;display: none">
+                                                        فیلد اضافه5:
+                                                    </td>
+                                                    <td>
+                                                        <input name="portal_user_10" id="portal_user_10" type="text" style="width: 93%;"/>
+                                                    </td>
+                                                </tr>-->
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table dir="rtl" style="text-align: right; width:98%;padding-right: 1%">
+                        <tr>
+                            <td style="width: 10%;text-align: right">
+                                آدرس: 
+                            </td>
+                            <td style="width: 90%;text-align: right">
+                                <input name="portal_user_address" id="portal_user_address" type="text" style="width: 97%"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                توضیحات مدیر:
+                            </td>
+                            <td>
+                                <input name="portal_user_comment" id="portal_user_comment" type="text"  style="width:97% "/>
+                            </td>
+                        </tr>                        
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++-->                                
+                                    فعال:
+                                    <input id="portal_user_isActive" name="portal_user_isActive" class="ui-state-default ui-corner-all" type="checkbox" checked="checked" />                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++-->                                
+                                    بلوکه:
+                                    <input id="portal_user_blocked" name="portal_user_blocked" class="ui-state-default ui-corner-all" type="checkbox"  />                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right;padding-right: 30px">
+                                    <!--+++++++++ this checkbox related to next input so named whit next input tag prefix +++++++++-->                                
+                                    بازدید:
+                                    <input id="portal_user_visit_checkbox" class="ui-state-default ui-corner-all" type="checkbox" checked="checked" 
+                                           onclick='$("#portal_user_visit").prop("disabled",!$("#portal_user_visit").prop("disabled"));$("#portal_user_visit").val(-1*+$("#portal_user_visit").val());'/>
+                                    <input type="number" id="portal_user_visit" min="0" value="0" name="portal_user_visit"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="background-color: #eaeaf4;height: 40px;width: 98%;position: relative;">
+            <div style="float: right ;padding-right: 1%;">
+                <a id="cancel_portalUser">
+                    لغو
+                </a>                
+            </div>
+            <div id="portalUser_button" style="float: right ;">
+            </div>
+        </div>
+        <!--        
+        <div id="tice_student_Status_div" style= "width: 100%;text-align: center;background-color: #EEF6FB">
+                    <table style= "width: 100%;text-align: center;vertical-align:top">
+                        <tr style="background-color: #eaeaf4;height: 200px;vertical-align:top">
+                            <td>
+                                <br/>
+                                <div id="Student_register_tbl_div" style="padding-right: 3px;float: right;width: 975px;right: 3px;position: absolute"></div>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #eaeaf4;height: 200px;vertical-align:top">
+                            <td>
+                                <br/>
+                                <div id="Student_week_program_div" style="padding-right: 3px;float: right;width: 975px;right: 3px;position: absolute"></div>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #eaeaf4;height: 355px;vertical-align:top">
+                            <td>
+                                <br/>
+                                <div id="Student_workbook_div" style="padding-right: 3px;float: right;width: 975px;right: 3px;position: absolute"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        -->
+    </body>
+</html>

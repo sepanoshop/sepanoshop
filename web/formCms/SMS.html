@@ -1,0 +1,409 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+        <script SRC="../js/jquery/jquery.js"></script>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <br/>
+        <br/>
+        <br/>
+        <table style="width: 50%;padding: 1px;float: right" >            
+            <tr>
+                <td style="text-align: right;;width: 16%">
+                    نام مخاطب:            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_first_name" name="sms_first_name"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    نام خانوادگی :                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_last_name" name="sms_last_name"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>            
+            <tr>
+                <td style="text-align: right">
+                    تاریخ:            
+                </td>
+                <td style="text-align: right;">
+                    <input type="hidden" id="sms_id" name="id"/>
+                    <input type="text" id="sms_date" name="sms_date" disabled="disabled"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    توضیحات:                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_comment" name="sms_comment"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    وضعیت:                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" disabled="disabled" id="sms_status" name="sms_status"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    موضوع:                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" disabled="disabled" id="sms_subject" name="sms_subject"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+        </table>
+        <div style="clear: both"></div>
+        <fieldset style="width: 65%;float: right;color:black;height: 210px">
+            <legend>
+                <span id="dummyID_SendSMS1_MsgBox_lblLegend">
+                    متن پیامک
+                </span>
+            </legend>
+            <div style="float: right" >            
+                <img style="float: left" id="dummyID_SendSMS1_MsgBox_quickText" title="استفاده از متن های قبل" src="img/arrow-left.png">
+                <textarea name="sms_text" rows="9" cols="70" id="sms_text"></textarea>
+            </div>
+            <div style="clear: both">
+
+                <span id="dummyID_SendSMS1_MsgBox_lblLeft">160</span>
+
+                /
+                <span id="dummyID_SendSMS1_MsgBox_lblMax">160</span>
+
+                 (
+                <span id="dummyID_SendSMS1_MsgBox_lblSms">1</span>
+
+                )
+                <span id="dummyID_SendSMS1_MsgBox_RequiredFieldValidator1" style="visibility:hidden;">متن پیامک را وارد نمایید</span>
+            </div>
+
+
+        </fieldset>
+        <fieldset style="color:black;height: 210px">
+            <legend>گیرندگان</legend>
+            <div>                
+                شماره ها :
+            </div>
+            <div>
+
+                <textarea  name="sms_nubmers" id="sms_nubmers"  rows="9" cols="30" ></textarea>
+            </div>
+
+            <span id="Anthem_dummyID_SendSMS1_RegularExpressionValidator9__">
+                <span id="dummyID_SendSMS1_RegularExpressionValidator9" title="شماره موبایل معتبر نمی باشد" style="visibility:hidden;">
+                    <img src="icons/alert.png" class="valid">
+                </span>
+            </span>
+
+            <span id="Anthem_dummyID_SendSMS1_lblMessage__">
+                <span id="dummyID_SendSMS1_lblMessage"></span>
+            </span>
+        </fieldset>
+        <table style="width: 100%">
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right">
+                    <div style="float: right">
+                        <a id="cancel_SMS" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="SMS_button" style="position: relative;float: right">
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" >
+            // پیام هشدار
+            function alerts(message) {
+                jAlert(message);
+            }
+
+            function msg(title, message, delay) {
+                $.growlUI(title, message, delay);
+            }
+
+            // سوال تایید
+            function confirms(message) {
+                //    var retval = false;
+                //    jConfirm(message, 'تاییدیه سامانه', function(r) {
+                //        retval = r;
+                //    });
+                //    return false;
+
+                return confirm(message);
+
+            }
+
+            // باز و بسته کردن تگ دلخواه
+            function toggler(togglerId) {
+                $('#' + togglerId).toggle(500);
+            }
+
+            // باز  کردن تگ دلخواه
+            function openMe(openId) {
+                $('#' + openId).show(500);
+            }
+
+            //  بستن  تگ دلخواه
+            function closeMe(closeId) {
+                $('#' + closeId).hide(500);
+            }
+
+            function chk(checkboxId, tagId) {
+
+                if ($("#" + checkboxId).is(":checked")) {
+                    openMe(tagId);
+
+                }
+                else {
+                    closeMe(tagId);
+                }
+
+            }
+
+
+            // انتخاب/حذف انتخاب همه سطر ها
+
+            var checkflag = "false";
+            function select_deselectAll() {
+
+                if (chk_Array_IDs != null) {
+                    if (checkflag == "false") {
+                        for (i = 0; i < chk_Array_IDs.length; i++) {
+                            var ref_chk = document.getElementById(chk_Array_IDs[i]);
+                            if (ref_chk != null)
+
+                            ref_chk.checked = true;
+                    }
+                    checkflag = "true";
+
+                }
+                else {
+                    for (i = 0; i < chk_Array_IDs.length; i++) {
+                        var ref_chk = document.getElementById(chk_Array_IDs[i]);
+                        if (ref_chk != null)
+                            ref_chk.checked = false;
+                    }
+                    checkflag = "false";
+                }
+            }
+        }
+
+        // انتخاب همه سطر ها
+        function selectAll() {
+
+            if (chk_Array_IDs != null) {
+
+                for (i = 0; i < chk_Array_IDs.length; i++) {
+                    var ref_chk = document.getElementById(chk_Array_IDs[i]);
+                    if (ref_chk != null)
+
+                    ref_chk.checked = true;
+            }
+
+        }
+    }
+
+    // حذف انتخاب همه سطر ها
+    function deSelectAll() {
+
+        if (chk_Array_IDs != null) {
+
+            for (i = 0; i < chk_Array_IDs.length; i++) {
+                var ref_chk = document.getElementById(chk_Array_IDs[i]);
+                if (ref_chk != null)
+
+                ref_chk.checked = false;
+        }
+
+    }
+}
+
+
+//  انتخاب معکوس سطر ها
+function inSelectAll() {
+
+    if (chk_Array_IDs != null) {
+
+        for (i = 0; i < chk_Array_IDs.length; i++) {
+            var ref_chk = document.getElementById(chk_Array_IDs[i]);
+            if (ref_chk != null)
+                if (ref_chk.checked == false)
+                    ref_chk.checked = true;
+            else
+                ref_chk.checked = false;
+        }
+
+    }
+}
+
+function select_deselect(chk_Array, chk) {
+
+
+    if (chk_Array != null) {
+
+        for (i = 0; i < chk_Array.length; i++) {
+            var ref_chk = document.getElementById(chk_Array[i]);
+            if (ref_chk != null)
+                ref_chk.checked = chk;
+        }
+
+
+    }
+}
+
+// قرار دادن کاما در فیلد قیمت
+function moneyCommaSep(id) {
+    var ctrl = document.getElementById(id);
+    if (ctrl != null) {
+        var separator = ",";
+        var int1 = ctrl.value.replace(new RegExp(separator, "g"), "");
+        var regexp = new RegExp("\\B(\\d{3})(" + separator + "|$)");
+        do {
+            int1 = int1.replace(regexp, separator + "$1");
+        }
+        while (int1.search(regexp) >= 0)
+            ctrl.value = int1;
+    }
+}
+
+// حذف کاما
+function removeComma(id) {
+    var ctrl = document.getElementById(id);
+    var separator = ",";
+    ctrl.value = ctrl.value.replace(new RegExp(separator, "g"), "");
+}
+
+
+function GetParentIfExists(wnd) {
+    var wndOpener = wnd.parent;
+    if (!wndOpener) wndOpener = wnd;
+    return wndOpener;
+}
+function OpenPopupWindow(childURL, childName, childFeatures) {
+    var wndOpener = GetParentIfExists(window);
+    var wndChild;
+    wndChild = wndOpener.open(childURL, childName, childFeatures);
+    if (wndChild != null) {
+        if (g_JS_isWin || !g_JS_isIE)
+            wndChild.focus();
+    }
+}
+
+function popMe(Url, width, height) {
+    var wndOpener = GetParentIfExists(window);
+    var wndChild;
+    wndChild = wndOpener.open(Url, 'X625', 'width=' + width + ',height=' + height + ',top=20,left=100,toolbar=no,scrollbars=yes,resizable=yes');
+}
+
+function ajax(myUrl, myData) {
+    $.ajax({
+        type: "GET",
+        url: myUrl,
+        data: myData,
+        success: function (content) {
+            return content;
+        },
+        error: function () {
+            alert('error');
+        }
+    });
+}
+
+function checkSelect() {
+    var count = 0;
+    if (chk_Array_IDs != null) {
+
+        for (i = 0; i < chk_Array_IDs.length; i++) {
+            var ref_chk = document.getElementById(chk_Array_IDs[i]);
+            if (ref_chk != null && ref_chk.checked == true) {
+                count++;
+            }
+        }
+    }
+    if (count == 0) {
+        alert("هیچ رکوردی انتخاب نشده است");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function checkGroup() {
+    if (Page_ClientValidate()) {
+        var count = 0;
+        var checked = 0;
+        if (group_Array_IDs != null) {
+
+            for (i = 0; i < group_Array_IDs.length; i++) {
+                var ref_chk = document.getElementById(group_Array_IDs[i]);
+                if (ref_chk != null && ref_chk.checked == true) {
+                    checked++;
+                }
+                count++;
+            }
+        }
+        if (count == 0) {
+            alert("هنوز هیچ گروهی تعریف نشده است\nاز طریق مدیریت گروه ها گروه ایجاد نمایید");
+            return false;
+        }
+        else {
+            if (checked == 0) {
+                alert("هیچ گروه مخاطبی  انتخاب نشده است");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    }
+}
+
+
+
+function printMe(id) {
+
+    $('#' + id).printElement();
+
+}
+
+function hideMe() {
+    parent.$.facebox.close();
+
+}
+
+function clickButton(e, buttonid) {
+
+    var evt = e ? e : window.event;
+
+    var bt = document.getElementById(buttonid);
+
+    if (bt) {
+
+        if (evt.keyCode == 13) {
+
+            bt.click();
+
+            return false;
+
+        }
+
+    }
+
+}
+        </script>
+        <script type="text/javascript">
+//alert($("#qText").html());
+//onkeypress="smsLeftChar('text', 'dummyID_SendSMS1_MsgBox_lblLeft', 'dummyID_SendSMS1_MsgBox_lblSms','dummyID_SendSMS1_MsgBox_lblMax', null);"
+
+        </script>
+    </body>
+</html>

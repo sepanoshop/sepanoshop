@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CMS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="css/publicStyle.css" type="text/css"/>
+        <!-- jquery-->
+        <script type="text/javascript" src="js/jquery/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui-1.8.21.custom.min.js"></script>
+        <link id="them" rel="stylesheet" type="text/css" href="css/jquery/green/jquery-ui-1.8.21.custom.css"/>
+
+        <!-- editor-->
+        <script type="text/javascript" src="js/editor/ckeditor.js"></script>
+
+        <!--  calendar  -->
+        <script type="text/javascript" src="js/calendar/jquery.ui.datepicker-cc.js"></script>
+        <script type="text/javascript" src="js/calendar/jquery.ui.datepicker-cc-fa.js"></script>
+        <script type="text/javascript" src="js/calendar/jquery.ui.datepicker-cc.js"></script>
+        <script type="text/javascript" src="js/calendar/calendar.all.js"></script>
+        <script type="text/javascript" src="js/calendar/calendar.js"></script>
+
+        <!--  table  -->
+        <script src="js/table/jquery.dataTables.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="js/table/css/jquery.dataTables_themeroller.css" type="text/css"/>
+
+        <!--  Ajax File Upload  -->
+        <script type="text/javascript" src="js/jquery/ajaxfileupload.js"></script>
+
+        <!--  jj  -->
+        <script type="text/javascript" src="js/jj2.js"></script>
+        <script type="text/javascript" src="jsCms/cmsManager.js"></script>
+        <script type="text/javascript" src="jsCms/news.js"></script>
+        <script type="text/javascript" src="jsCms/content.js"></script>
+        <script type="text/javascript" src="jsCms/pic.js"></script>
+        <script type="text/javascript" src="jsCms/comment.js"></script>
+        <script type="text/javascript" src="jsCms/enrolment.js"></script>
+        <script type="text/javascript" src="jsCms/enrolment3.js"></script>
+        <script type="text/javascript" src="jsCms/user.js"></script>
+        <script type="text/javascript" src="jsCms/group.js"></script>
+        <script type="text/javascript" src="jsCms/forum.js"></script>
+        <script type="text/javascript" src="jsCms/product.js"></script>
+        <script type="text/javascript" src="jsCms/poll.js"></script>
+        <script type="text/javascript" src="jsCms/sms.js"></script>
+        <script type="text/javascript" src="jsCms/factor.js"></script>
+        <script type="text/javascript" src="jsCms/customer.js"></script>
+        <script type="text/javascript" src="jsCms/negin.js"></script>
+        <script type="text/javascript" src="jsCms/portal.js"></script>
+
+        <style  type="text/css">
+            th{background-color: #eae9e9}
+            body{color: black}
+            table{color: black}
+        </style>
+
+    <body class="body" style="padding-top: 8px;direction: rtl" dir="rtl">
+    <center>
+        <div style="width: 1097px;">
+            <!--<div style=";background-color: #eaeaf4;border-right: solid white;" id="feeds"></div>-->
+            <div id="tabs" style="height: 85px;display: none;padding: 0px" >
+                <ul>
+                    <li style="display: none" id="CommentTab"><a id="swCommentTabA" href="#swComment" >پیام ها</a></li>
+                    <li style="display: none" id="ContentTab"><a  id="ContentTabA" href="#swContent">محتوا</a></li>
+                    <li style="display: none" id="NewsTab"><a id="NewsTabA" href="#swNewsAll">اخبار</a></li>
+                    <li style="display: none" id="PicTab"><a id="PicTabA" href="#swPicAll">گالری</a></li>
+                    <li style="display: none" id="EnrolmentTab"><a id="swEnrolmentTabA" href="#swEnrolment" >استخدام</a></li>
+                    <li style="display: none" id="EnrolmentTab3"><a id="swEnrolmentTabA3" href="#swEnrolment3" >استاد</a></li>
+                    <li style="display: none" id="ProductTab"><a id="ProductTabA" href="#swProductAll" >حسابداری</a></li>
+                    <li style="display: none" id="PollTab"><a id="PollTabA" href="#swPollAll">نظرسنجی</a></li>
+                    <li style="display: none" id="CategoryForumTab"><a id="CategoryForumTabA" href="#swForumAll">انجمن ها</a></li>
+                    <li style="display: none" id="UserTab"><a id="UserTabA" href="#swAccessAll" >دسترسی</a></li>
+                    <li style="display: none" id="SMSTab"><a id="SmsTabA" href="#swSMSAll">پیامک</a></li>
+                    <li style="display: none" id="PortalTab"><a id="PortalTabA" href="#swPortalAll">پرتال</a></li>
+                    <li id="LoginTab"><a href="#login">ورود</a></li>
+                </ul>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swContent" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <div id="swContentTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    <div id="swContentForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swNewsAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="newsTab1" style="display: none"><a href="#swNews" onclick="if ($('#swNewsTbl').html() == '') {
+                                    cmsNews.m_refresh();
+                                }
+                                ;
+                                cmsNews.mainTabSetSize();">اخبار</a></li>
+                        <li id="newsTab2" style="display: none"><a href="#swCategoryNews" onclick="if ($('#swCategoryNewsTbl').html() == '') {
+                                    cmsCategoryNews.m_refresh();
+                                }
+                                ;
+                                cmsCategoryNews.mainTabSetSize();
+                                cmsCategoryNews.loadForm();">طبقه بندی</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swNews" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swNewsTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swNewsForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+                    <div id="swCategoryNews" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swCategoryNewsTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swCategoryNewsForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swPicAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <!--<div id="swPicAll" style="padding-right: 0px;padding-top: 4px;width: 1083px;">-->
+                    <ul style="width: 1081px">
+                        <li id="PicTab1" style="display: none"><a href="#swPic" onclick="if ($('#swPicTbl').html() == '') {
+                                    cmsPic.m_refresh();
+                                    cmsPic.loadForm();//new in v1.5.0
+                                }
+                                ;
+                                cmsPic.mainTabSetSize();">تصاویر</a></li>
+                        <li id="PicTab2" style="display: none"><a href="#swCategoryGallery" onclick="if ($('#swCategoryGalleryTbl').html() == '') {
+                                    cmsCategoryGallery.m_refresh();
+                                }
+                                ;
+                                cmsCategoryGallery.mainTabSetSize();
+                                cmsCategoryGallery.loadForm();">طبقه بندی</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swPic" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swPicTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swPicForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swCategoryGallery" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swCategoryGalleryTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swCategoryGalleryForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="login" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 110px">
+                    <div id="swLoginForm" style="width: 1083px;background-color: #eaeaf4;border-right: solid white;height: 120px"></div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swComment" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <div id="swCommentTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    <div id="swCommentForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swEnrolment" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <div id="swEnrolmentTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    <div id="swEnrolmentForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swEnrolment3" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <div id="swEnrolmentTbl3" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    <div id="swEnrolmentForm3" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white"></div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swProductAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="ProductTab1" style="display: none"><a href="#swProduct1" onclick="if ($('#swProduct1Tbl').html() == '') {
+                                    cmsFactor.m_refresh();
+                                }
+                                ;">فاکتور</a></li>
+                        <li id="ProductTab2" style="display: none"><a href="#swProduct2" onclick="if ($('#swProduct2Tbl').html() == '') {
+                                    cmsProduct.m_refresh();
+                                }
+                                ;">محصولات</a></li>
+
+                        <li id="ProductTab8" style="display: none"><a href="#swCategoryProducts" onclick="if ($('#swCategoryProductsTbl').html() == '') {
+
+                                    cmsCategoryProducts.m_refresh();
+                                }
+                                ;
+                                cmsCategoryProducts.mainTabSetSize();
+                                cmsCategoryProducts.loadForm();">طبقه بندی</a>
+                        </li>
+                        <li id="ProductTab3" style="display: none"><a href="#swProduct3" onclick="if ($('#swProduct3Tbl').html() == '') {
+                                    cmsCustomer.m_refresh();
+                                }
+                                ;">اشخاص</a></li>
+                        <li id="ProductTab4" style=""><a href="#swProduct4" onclick="cmsFactor.m_refresh2();">فاکتور های این ماه</a></li>
+                        <li id="ProductTab5" style=""><a href="#swProduct5" onclick="if ($('#swProduct5Tbl').html() == '') {
+                                    cmsFactor.m_refresh3();
+                                }
+                                ;">فاکتور های امسال</a></li>
+                        <li id="ProductTab6" style=""><a href="#swProduct6" onclick="if ($('#swProduct6Tbl').html() == '') {
+                                    cmsFactor.m_refresh4();
+                                }
+                                ;">فاکتور های پارسال</a></li>
+                        <li id="ProductTab7" style=""><a href="#swProduct7" onclick="cmsFactor.m_refresh5();">فاکتور های تسویه نشده</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct1" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swProduct1Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swProduct1Form" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct2" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swProduct2Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swProduct2Form" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swCategoryProducts" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swCategoryProductsTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swCategoryProductsForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>                  
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+                    <div id="swProduct3" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swProduct3Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swProduct3Form" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct4" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 470px">
+                        <div id="swProduct4Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct5" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 470px">
+                        <div id="swProduct5Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct6" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 470px">
+                        <div id="swProduct6Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swProduct7" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 470px">
+                        <div id="swProduct7Tbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swForumAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="CategoryForumTab1" style="display: none"><a href="#swCategoryForum" onclick="if ($('#swCategoryForumTbl').html() == '') {
+                                    cmsCategoryForum.m_refresh();
+                                }
+                                ;
+                                cmsCategoryForum.mainTabSetSize();">انجمن ها</a></li>
+                        <li id="CategoryForumTab2" style="display: none"><a href="#swForum" onclick="if ($('#swForumTbl').html() == '') {
+                                    cmsForum.m_refresh();
+                                }
+                                ;
+                                cmsForum.mainTabSetSize();
+                                cmsForum.loadForm();">تبادل نظر ها</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swForum" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swForumTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swForumForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swCategoryForum" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swCategoryForumTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swCategoryForumForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                </div>
+                <div id="swAccessAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="UserTab1" style="display: none"><a href="#swUser" onclick="if ($('#swUserTbl').html() == '') {
+                                    cmsUser.m_refresh();
+                                }
+                                ;
+                                cmsUser.mainTabSetSize();">کاربران</a></li>
+                        <li id="UserTab2" style="display: none"><a href="#swGroup" onclick="if ($('#swGroupTbl').html() == '') {
+                                    cmsGroup.m_refresh();
+                                }
+                                ;
+                                cmsGroup.mainTabSetSize();
+                                cmsGroup.loadForm();">گروه ها</a></li>
+                        <li id="UserTab3" style="display: none"><a href="#swBackup"  onclick="jj('do=Backup.backup').jjAjax2(false)">پشتیبان گیری</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swUser" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swUserTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swUserForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swGroup" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swGroupTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swGroupForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swBackup" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div style="width: 1083px;text-align: right;padding: 10px;">
+                            <br/>
+                            <a style="color: blue" id="linkDownloadSql" onclick="jj('backup/backup.sql.zip').jjGoNewPage();">دانلود دیتابیس  </a>
+                            <br/>
+                            <br/>
+                            <!--                            <a style="color: blue" id="linkDownloadZip" onclick="jj('backup/backup.zip').jjGoNewPage();">دانلود فایل ها  </a>
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>-->
+                            <a style="color: blue" onclick="jj('do=Backup.delete').jjAjax();">حذف فایل های پشتیبان</a>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swPollAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="PollTab1" style="display: none"><a href="#swPoll" onclick="if ($('#swPollTbl').html() == '') {
+                                    cmsPoll.m_refresh();
+                                }
+                                ;
+                                cmsPoll.mainTabSetSize();">سوالات</a></li>
+                        <li id="PollTab2" style="display: none"><a href="#swCategoryPoll" onclick="if ($('#swCategoryPollTbl').html() == '') {
+                                    cmsCategoryPoll.m_refresh();
+                                }
+                                ;
+                                cmsCategoryPoll.mainTabSetSize();
+                                cmsCategoryPoll.loadForm();">جواب ها</a></li>
+                    </ul>
+                    <div id="swPoll" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swPollTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swPollForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <div id="swCategoryPoll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swCategoryPollTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                    </div>
+                </div>
+                <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <div id="swSMSAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <!--<div id="swSMSAll" style="padding-right: 0px;padding-top: 4px;width: 1083px;">-->
+                    <ul style="width: 1081px">
+                        <li id="SMSTab1" style="display: none"><a href="#swSMS" onclick="if ($('#swSMSTbl').html() == '') {
+                                    cmsSMS.m_refresh();
+                                    cmsSMS.loadForm();//new in v1.5.0
+                                }
+                                ;
+                                cmsSMS.mainTabSetSize();">پیامک ها</a></li>
+                        <li id="SMSTab2" style="display: none"><a href="#swSettingSMS" onclick="cmsSettingSMS.mainTabSetSize();
+                                cmsSettingSMS.loadForm();">تنظیمات</a></li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swSMS" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swSMSTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swSMSForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swSettingSMS" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swSettingSMSForm" style="width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                </div>
+                <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                <div id="swPortalAll" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;">
+                    <ul style="width: 1081px">
+                        <li id="PortalTab1" style="display: none"><a href="#swPortal" onclick="if ($('#swPortalTbl').html() == '') {
+                                    cmsPortal.m_refresh();
+                                    cmsPortal.loadForm();
+                                    alert('PortalTab1.onclick()');
+                                }
+                                ;
+                                cmsPortal.mainTabSetSize();">پست های کاربران پرتال</a></li>
+                        <li id="PortalTab2" style="display: none"><a href="#swPortalUsers" onclick="if ($('#swPortalUsersTbl').html() == '') {
+//                                    cmsPortalUser.m_refresh();
+                                    cmsPortalUser.m_refresh();
+                                    cmsPortalUser.loadForm();
+                                    alert('PortalTab2.onclick()');
+                                }
+                                ;
+                                cmsPortalUser.mainTabSetSize();
+//cmsPortalUser.m_show_form();
+
+//                                cmsPortalUser.loadForm();
+                                                                     ">
+                                اعضای پرتال
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swPortal" style="padding-right: 1px;padding-top: 4px;width: 1078px;">
+                        <div id="swPortalTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swPortalForm" style="display: none;width: 1080px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="swPortalUsers" style="padding-right: 0px;padding-top: 4px;width: 1070px;background-color: white;height: 2px">
+                        <div id="swPortalUsersTbl" style="padding-right: 3px;float: right;width: 1083px;right: 0px;position: absolute"></div>
+                        <div id="swPortalUsersForm" style="display: none;width: 1083px;background-color: #eaeaf4;border-right: solid white;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <script type="text/javascript">
+        var content_content_editor = "";
+        var forum_content_editor = "";
+        var news_content_editor = "";
+        var product_content_editor = "";
+        var portal_user_content_editor = "";
+        $(function () {
+            jj('Server').jjSetServletName();
+            loadFormsCms();
+
+            manageTabOnClickCms();
+            $("#tabs").tabs({selected: 12});
+            $("#swPicAll").tabs();
+            $("#swPortalAll").tabs();
+            $("#swNewsAll").tabs();
+            $("#swForumAll").tabs();
+            $("#swPollAll").tabs();
+            $("#swAccessAll").tabs();
+            $("#swProductAll").tabs();
+            $("#swSMSAll").tabs();
+//$("#swSMSAll").hide();
+            $("#tabs").show();
+//cmsComment.loadForm();
+//                cmsContent.loadForm();
+            $("body").css('background-image', "url('img/aaa.jpg')");
+        });
+    </script>
+</body>
+</html>

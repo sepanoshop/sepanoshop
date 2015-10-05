@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>اطلاعات پیامک</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS ================================================== -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery/gray/jquery-ui-1.8.21.custom.css">
+        <!-- CSS ================================================== -->
+    </head>
+    <body>
+        <div calss="mainDiv">
+            <div class="headerDiv">
+
+            </div>
+            <div class="contentDiv">
+                <div class="tabs">
+                    <ul class="tab-links">
+                        <li class="active" onclick="showAllSms();"><a href="#tab1">لیست پیامک ها</a></li>
+                        <li onclick="showSetting();"><a href="#tab2">تنظیمات</a></li>
+                        <!--<li onclick=""><a href="#tab2">تنظیمات</a></li>-->
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab active">
+                            <div class="tableDiv" id="tableDiv">
+                                <input type="button" value="ارسال پیامک" onclick="showSendForm();" id="showSendFormBtn"/>
+                                <br/><br/>
+                                <table class="table">
+                                    <tbody id="allSmsTbl">
+                                        <tr class="tableHeader">
+                                            <th>
+                                                کد
+                                            </th>
+                                            <th>
+                                                نام گیرنده
+                                            </th>
+                                            <th>
+                                                شماره گیرنده
+                                            </th>
+                                            <th>
+                                                فرستنده
+                                            </th>
+                                            <th>
+                                                متن پیامک
+                                            </th>
+                                            <th>
+                                                وضعیت
+                                            </th>
+                                            <th>
+                                                زمان ارسال پیامک
+                                            </th>
+
+                                            <th>
+                                                حذف
+                                            </th>
+                                            <th>
+                                                ارسال مجدد
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- FORM -->
+                            <div class="formDiv" id="formDiv">
+                                <input type="button" value="مشاهده لیست پیامک ها" onclick="showSmsTable();" id="smsTableShowBtn" />
+                                <!--<input type="button" value="مشاهده لیست پیامک ها" onclick="showAllSms();" id="smsTableShowBtn" />-->
+                                <br/><br/>
+                                <form name="sendSmsForm" id="sendSmsForm" >
+                                    <ul class="list">
+                                        <li>
+                                            <span> نام سرویس دهنده </span>
+                                        </li>
+                                        <li>
+                                            <select id="sms_webService" name="sms_webService">
+                                                <option id="sms_webService_opt">
+
+                                                </option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> شماره فرستنده</span>
+                                        </li>
+                                        <li>
+                                            <select id="sms_sender" name="sms_sender">
+                                                <option id="sms_sender_opt">
+
+                                                </option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> گیرندگان </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="sms_receiver" name="sms_receiver" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> متن پیامک </span>
+                                        </li>
+                                        <li>
+                                            <textarea name="sms_text" id="sms_text" class="textArea" oninput="checkCharactersNum();">
+                                                
+                                            </textarea>
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> تعداد کاراکترها </span>
+                                        </li>
+                                        <li>
+                                            <span id="sms_characters" name="sms_characters" >
+
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <input type="button" value="ارسال" onclick="sendSms();"/>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="tab2" class="tab">
+                            <div class="tableDiv" id="tableSettingDiv">
+                                <input type="button" value="افزودن" onclick="showSettingForm();" id="showSettingFormBtn" />
+                                <br/><br/>
+                                <table class="table">
+                                    <tbody id="allSettingTbl">
+                                        <tr class="tableHeader">
+                                            <th>
+                                                سرویس دهنده
+                                            </th>
+                                            <th>
+                                                کد امنیتی
+                                            </th>
+                                            <th>
+                                                نام کاربری
+                                            </th>
+                                            <th>
+                                                گذرواژه
+                                            </th>
+                                            <th>
+                                                نام دامنه
+                                            </th>
+                                            <th>
+                                                شماره های اختصاصی
+                                            </th>
+                                            <th>
+                                                WSDL
+                                            </th>
+                                            <th>
+                                                مانده حساب
+                                            </th>
+                                            <th>
+                                                حذف
+                                            </th>
+                                            <th>
+                                                ویرایش
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- FORM -->
+                            <div class="formDiv" id="formSettingDiv">
+                                <form id="formSetting" name="formSetting">
+                                    <input type="button" value="مشاهده تنظیمات" onclick="showSettingTable();" id="settingTableShowBtn" />
+                                    <!--<input type="button" value="مشاهده تنظیمات" onclick="showSetting();" id="settingTableShowBtn" />-->
+                                    <br/><br/>
+                                    <!--                                <form >-->
+                                    <ul class="list">
+                                        <li>
+                                            <span> نام سرویس دهنده </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_webService" name="smsSetting_webService" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> کد امنیتی</span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_apiKey" name="smsSetting_apiKey" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> نام کاربری </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_userName" name="smsSetting_userName" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> گذرواژه </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_pass" name="smsSetting_pass" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> نام دامنه </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_domain" name="smsSetting_domain" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> شماره های اختصاصی </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_exclusive_numbers" name="smsSetting_exclusive_numbers" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <span> WSDL </span>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="inputText" id="smsSetting_wsdl" name="smsSetting_wsdl" />
+                                        </li>
+                                    </ul>
+                                    <ul class="list">
+                                        <li>
+                                            <input type="hidden" id="smsSettingRowId" name="id">
+                                            <input type="button" value="ثبت" onclick="insertSmsSetting();" id="insertSmsSettingBtn"/>
+                                            <input type="button" value="ویرایش" onclick="editSmsSetting();" id="editSmsSettingBtn" style="display: none;"/>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <!--</form>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery/jquery-1.7.2.min.js" ></script>
+        <script type="text/javascript" src="js/jj2.js" ></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui-1.8.21.custom.min.js" ></script>
+        <script>
+                                                $(document).ready(function () {
+//                                                new jj("do=sms.refresh").jjAjax2();
+//                                                    new jj("do=smsSetting.setGlobalParam").jjAjax2();
+                                                    new jj("do=sms.refresh2").jjAjax2();
+//                                                new jj("do=smsSetting.refresh").jjAjax2();
+                                                });
+                                                //****** Tabs *****/>
+                                                jQuery(document).ready(function () {
+                                                    jQuery('.tabs .tab-links a').on('click', function (e) {
+                                                        var currentAttrValue = jQuery(this).attr('href');
+
+                                                        // Show/Hide Tabs
+                                                        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+                                                        // Change/remove current tab to active
+                                                        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+                                                        e.preventDefault();
+                                                    });
+                                                });
+                                                //<****** Tabs *****/
+                                                //************SMS*****>
+                                                function showAllSms() {
+//                                                    alert("a");
+//                                                new jj("do=sms.refresh").jjAjax2();
+                                                    new jj("do=sms.refresh2").jjAjax2();
+                                                }
+                                                function showSendForm() {
+//                                                    alert("show send sms form");
+                                                    $("#formDiv").show();
+                                                    $("#tableDiv").hide();
+                                                    $("#showSendFormBtn").hide();
+                                                    $("#smsTableShowBtn").show();
+                                                    new jj("#formDiv").jjFormClean();
+                                                    $("#sms_characters").html("");
+                                                    new jj("do=smsSetting.selectWebService&panel_webServices=sms_webService&panel_numbers=sms_sender").jjAjax2();
+                                                }
+                                                function showSmsTable() {
+//                                                    alert("show sms");
+                                                    $("#formDiv").hide();
+                                                    $("#tableDiv").show();
+                                                    $("#smsTableShowBtn").hide();
+                                                    $("#showSendFormBtn").show();
+                                                }
+                                                function sendSms() {
+//                                                    alert("send sms");
+//                                                    var webService = $("#sms_webService").val();
+//                                                    var sender = $("#sms_sender").val();
+//                                                    var receiver = $("#sms_receiver").val();
+//                                                    var text = $("#sms_text").val();
+//                                                    alert(webService + "  " + sender + "  " + receiver + "    " + text);
+//                                                    alert(new jj("#sendSmsForm").jjSerial());
+//                                                    new jj("do=sms.sendSMSByApiKeyWithRequest&sms_webService=" + webService + "&sms_sender=" + sender + "&sms_receiver=" + receiver + "&sms_text=" + text).jjAjax2();
+                                                    new jj("do=sms.sendSMSWithRequest&" + new jj("#sendSmsForm").jjSerial()).jjAjax2();
+                                                    new jj("#sendSmsForm").jjFormClean();
+                                                    $("#sms_characters").html("");
+//                                                new jj("do=sms.sendSMSByApiKey").jjAjax2();
+                                                }
+                                                function deleteRow(rowId) {
+//                                                    alert(rowId);
+                                                    new jj("do=sms.delete&id=" + rowId).jjAjax2();
+                                                    alert("حذف شد.");
+                                                }
+                                                function reSendRow(rowId) {
+//                                                    alert(rowId);
+                                                    $("#formDiv").show();
+                                                    $("#tableDiv").hide();
+                                                    $("#showSendFormBtn").hide();
+                                                    $("#smsTableShowBtn").show();
+                                                    new jj("do=sms.select&id=" + rowId).jjAjax2();
+                                                    new jj("do=smsSetting.selectWebService&panel_webServices=sms_webService&panel_numbers=sms_sender").jjAjax2();
+//                                                alert($("#smsTextTd_" + rowId).html());
+//                                                alert($("#smsReceiverTd_" + rowId).html());
+//                                                $("#sms_receiver").val($("#smsReceiverTd_" + rowId).html());
+//                                                $("#sms_text").val($("#floatBox_0" + rowId).html());
+//                                                checkCharactersNum();
+//                                                new jj("do=smsSetting.selectWebService&&panel_webServices=sms_webService&panel_numbers=sms_sender").jjAjax2();
+                                                }
+                                                function checkCharactersNum() {
+                                                    var smsTextLen = $("#sms_text").val().length;
+                                                    $("#sms_characters").html(smsTextLen);
+                                                }
+                                                //<************SMS*****
+
+                                                //************SMS SETTING*****>
+
+                                                function showSetting() {
+//                                                    alert("b");
+                                                    new jj("do=smsSetting.refresh").jjAjax2();
+                                                }
+
+                                                function showSettingForm() {
+//                                                    alert("show setting form");
+                                                    $("#formSettingDiv").show();
+                                                    $("#tableSettingDiv").hide();
+                                                    $("#editSmsSettingBtn").hide();
+                                                    $("#insertSmsSettingBtn").show();
+                                                    new jj("#formSetting").jjFormClean();
+                                                }
+
+                                                function showSettingTable() {
+//                                                    alert("show settings");
+                                                    $("#formSettingDiv").hide();
+                                                    $("#tableSettingDiv").show();
+                                                }
+
+                                                function insertSmsSetting() {
+////                                                    alert("insertSetting");
+//                                                    var webService = $("#smsSetting_webService").val();
+//                                                    var apiKey = $("#smsSetting_apiKey").val();
+//                                                    var userName = $("#smsSetting_userName").val();
+//                                                    var pass = $("#smsSetting_pass").val();
+//                                                    var wsdl = $("#smsSetting_wsdl").val();
+//                                                    var exclusiveNumbers = $("#smsSetting_exclusive_numbers").val();
+                                                    alert(new jj("#formSettingDiv").jjSerial());
+//                                                    new jj("do=smsSetting.insert&smsSetting_webService=" + webService + "&smsSetting_apiKey=" + apiKey + "&smsSetting_userName=" + userName + "&smsSetting_pass=" + pass + "&smsSetting_wsdl=" + wsdl + "&smsSetting_exclusive_numbers=" + exclusiveNumbers).jjAjax2();
+                                                    new jj("do=smsSetting.insert&" + new jj("#formSettingDiv").jjSerial()).jjAjax2();
+                                                    new jj("#formSettingDiv").jjFormClean();
+                                                }
+
+                                                function deleteSettingRow(rowId) {
+//                                                    alert(rowId);
+                                                    new jj("do=smsSetting.delete&id=" + rowId).jjAjax2();
+                                                    alert("حذف شد.");
+                                                }
+
+                                                function editdRow(rowId) {
+                                                    alert(rowId);
+                                                    $("#formSettingDiv").show();
+                                                    $("#tableSettingDiv").hide();
+                                                    $("#editSmsSettingBtn").show();
+                                                    new jj("do=smsSetting.select&id=" + rowId + "&panel=settingRowTr" + rowId).jjAjax2();
+                                                    $("#insertSmsSettingBtn").hide();
+//                                                $("#smsSetting_webService").val($("#settingWebServiceTd_" + rowId).html());
+//                                                $("#smsSettingRowId").val($("#settingIdTd_" + rowId).html());
+//                                                $("#smsSetting_apiKey").val($("#floatBox_1" + rowId).html());
+//                                                $("#smsSetting_userName").val($("#settingUserNameTd_" + rowId).html());
+//                                                $("#smsSetting_pass").val($("#settingPassTd_" + rowId).html());
+//                                                $("#smsSetting_exclusive_numbers").val($("#floatBox_2" + rowId).html());
+//                                                $("#smsSetting_wsdl").val($("#floatBox_3" + rowId).html());
+
+                                                }
+                                                function editSmsSetting() {
+//                                                    var rowId = $("#smsSettingRowId").val();
+//                                                    alert(rowId);
+//                                                    var webService = $("#smsSetting_webService").val();
+//                                                    var apiKey = $("#smsSetting_apiKey").val();
+//                                                    var userName = $("#smsSetting_userName").val();
+//                                                    var pass = $("#smsSetting_pass").val();
+//                                                    var wsdl = $("#smsSetting_wsdl").val();
+//                                                    var exclusiveNumbers = $("#smsSetting_exclusive_numbers").val();
+//                                                    alert(new jj("#formSettingDiv").jjSerial());
+                                                    new jj("do=smsSetting.edit&" + new jj("#formSettingDiv").jjSerial()).jjAjax2();
+//                                                    new jj("do=smsSetting.edit&id=" + rowId + "&smsSetting_webService=" + webService + "&smsSetting_apiKey=" + apiKey + "&smsSetting_userName=" + userName + "&smsSetting_pass=" + pass + "&smsSetting_wsdl=" + wsdl + "&smsSetting_exclusive_numbers=" + exclusiveNumbers + "&panel=settingRowTr" + rowId).jjAjax2();
+
+                                                }
+                                                function selectNumbers(id) {
+//                                                    alert("selectNumbers");
+                                                    new jj("do=smsSetting.selectNumbers&id=" + id + "&panel=sms_sender").jjAjax2();
+                                                }
+                                                //<************SMS SETTING*****
+
+                                                function showBox(i, rowId) {
+                                                    $("#floatBox_" + i + rowId).show();
+                                                }
+                                                function hideBox(i, rowId) {
+                                                    $("#floatBox_" + i + rowId).hide();
+                                                }
+        </script>
+    </body>
+</html>

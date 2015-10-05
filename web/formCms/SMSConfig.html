@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+        <script SRC="../js/jquery/jquery.js"></script>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <br/>
+        <br/>
+        <br/>
+        <table style="width: 50%;padding: 1px;float: right" >            
+            <tr>
+                <td style="text-align: right;;width: 17%">
+                     نام سیستم:            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_config_name" name="sms_config_name"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;;width: 19%">
+                    آدرس WSDL:            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_config_wsdl" name="sms_config_wsdl"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                     شماره اختصاصی:                                           
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_config_number" name="sms_config_number"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>            
+            <tr>
+                <td style="text-align: right">
+                    کلید امنیتی:            
+                </td>
+                <td style="text-align: right;">
+                    <input type="hidden" id="sms_id" name="id"/>
+                    <input type="text" id="sms_config_key" name="sms_config_key" disabled="disabled"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    توضیحات:                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" id="sms_config_comment" name="sms_config_comment"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">
+                    وضعیت سیستم:                                            
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" disabled="disabled" id="sms_config_status" name="sms_config_status"  class="tahoma10" style="width: 98%"/>
+                </td>
+            </tr>
+        </table>
+        <div style="clear: both"></div>
+        <fieldset style="width: 65%;float: right;color:black;height: 210px">
+            <legend>
+                <span id="sms_config_system" >
+                    تنظیمات سیستم:
+                </span>
+            </legend>
+        </fieldset>
+        <fieldset style="color:black;height: 210px">
+            <legend>پیامهای سیسیتم</legend>
+            <div>
+                <div id="sms_config_log">
+                    
+                </div>
+            </div>
+        </fieldset>
+        <table style="width: 100%">
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right">
+                    <div style="float: right">
+                        <a id="cancel_SMS" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="SMS_button" style="position: relative;float: right">
+                    </div>
+                </td>
+            </tr>
+        </table>                
+    </body>
+</html>
