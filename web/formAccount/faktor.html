@@ -1,0 +1,249 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    </head>
+    <body class="body" style="padding-top: 8px;width: 983px;">
+        <table border="0" id="Factor_form_in_cms" border="0" cellspacing="2" dir="rtl" style="border-collapse: collapse;width: 98%;">
+            <tr>
+                <td style="border:solid lightgray 1px;padding:2px;">
+                    <div align="right" >
+                        <table border="0" cellspacing="1" style="border-collapse: collapse;background-color: #dfdede;" width="100%" dir="rtl">
+                            <tr>
+                                <td style="width: 10%">
+                                    <input type="hidden" name="account_factor_user_id" id="account_factor_user_id">
+                                    &nbsp;&nbsp;
+                                    درج توسط:
+                                    &nbsp;
+                                    <input type="text" name="account_factor_user_name" id="account_factor_user_name" size="20" disabled="disabled">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    کد:
+                                    <input type="text" name="id" id="account_factor_id" size="5" disabled="disabled">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    نوع فاکتور:
+                                    <select size="1" name="account_factor_type" id="account_factor_type" style="width:70px;font-family:Tahoma;font-size:11pt" disabled="disabled">
+                                        <option value="0">فروش</option>
+                                        <option value="1">خرید</option>
+                                    </select>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    تاریخ:
+                                    <input type="text" name="account_factor_date" id="account_factor_date" size="13">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    کد دستی:
+                                    <input type="text" name="account_factor_code" id="account_factor_code" size="10">
+                                    <br/>
+                                    &nbsp;&nbsp;
+                                    نام مشتری:
+                                    <input type="hidden" name="account_factor_cust_id" id="account_factor_cust_id">
+                                    <input type="text" name="account_factor_cust_name" id="account_factor_cust_name" size="20">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span id="searchValue" style="color: blue"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right">
+                        <table border="0" cellspacing="1" style="border-collapse: collapse;background-color: #d7d3d3" width="100%" dir="rtl">
+                            <tr style="border:solid lightgray 1px;background-color: #939090;color: white;height: 30px">
+                                <td style="text-align: center">&nbsp;</td>
+                                <td style="text-align: center">ردیف</td>
+                                <td style="text-align: center">نام کالا</td>
+                                <td style="text-align: center">تعداد</td>
+                                <td style="text-align: center">واحد</td>
+                                <td style="text-align: center">فی</td>
+                                <td style="text-align: center">جمع</td>
+                            </tr>
+                            <tr id="trProduct1">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_1"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">1<input type="hidden" name="account_factor_pr_id_1" id="account_factor_pr_id_1"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_1" id="account_factor_pr_name_1" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr1"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_1" id="account_factor_pr_count_1" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_1" id="account_factor_pr_unit_1" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_1" id="account_factor_pr_fee_1" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_1" id="account_factor_pr_sum_1" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct2" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_2"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">2<input type="hidden" name="account_factor_pr_id_2" id="account_factor_pr_id_2"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_2" id="account_factor_pr_name_2" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr2"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_2" id="account_factor_pr_count_2" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_2" id="account_factor_pr_unit_2" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_2" id="account_factor_pr_fee_2" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_2" id="account_factor_pr_sum_2" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct3" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_3"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">3<input type="hidden" name="account_factor_pr_id_3" id="account_factor_pr_id_3"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_3" id="account_factor_pr_name_3" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr3"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_3" id="account_factor_pr_count_3" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_3" id="account_factor_pr_unit_3" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_3" id="account_factor_pr_fee_3" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_3" id="account_factor_pr_sum_3" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct4" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_4"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">4<input type="hidden" name="account_factor_pr_id_4" id="account_factor_pr_id_4"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_4" id="account_factor_pr_name_4" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr4"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_4" id="account_factor_pr_count_4" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_4" id="account_factor_pr_unit_4" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_4" id="account_factor_pr_fee_4" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_4" id="account_factor_pr_sum_4" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct5" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_5"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">5<input type="hidden" name="account_factor_pr_id_5" id="account_factor_pr_id_5"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_5" id="account_factor_pr_name_5" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr5"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_5" id="account_factor_pr_count_5" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_5" id="account_factor_pr_unit_5" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_5" id="account_factor_pr_fee_5" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_5" id="account_factor_pr_sum_5" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct6" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_6"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">6<input type="hidden" name="account_factor_pr_id_6" id="account_factor_pr_id_6"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_6" id="account_factor_pr_name_6" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr6"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_6" id="account_factor_pr_count_6" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_6" id="account_factor_pr_unit_6" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_6" id="account_factor_pr_fee_6" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_6" id="account_factor_pr_sum_6" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct7" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_7"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">7<input type="hidden" name="account_factor_pr_id_7" id="account_factor_pr_id_7"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_7" id="account_factor_pr_name_7" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr7"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_7" id="account_factor_pr_count_7" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_7" id="account_factor_pr_unit_7" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_7" id="account_factor_pr_fee_7" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_7" id="account_factor_pr_sum_7" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct8" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_8"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">8<input type="hidden" name="account_factor_pr_id_8" id="account_factor_pr_id_8"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_8" id="account_factor_pr_name_8" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr8"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_8" id="account_factor_pr_count_8" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_8" id="account_factor_pr_unit_8" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_8" id="account_factor_pr_fee_8" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_8" id="account_factor_pr_sum_8" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct9" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_9"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">9<input type="hidden" name="account_factor_pr_id_9" id="account_factor_pr_id_9"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_9" id="account_factor_pr_name_9" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr9"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_9" id="account_factor_pr_count_9" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_9" id="account_factor_pr_unit_9" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_9" id="account_factor_pr_fee_9" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_9" id="account_factor_pr_sum_9" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct10" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_10"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">10<input type="hidden" name="account_factor_pr_id_10" id="account_factor_pr_id_10"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_10" id="account_factor_pr_name_10" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr10"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_10" id="account_factor_pr_count_10" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_10" id="account_factor_pr_unit_10" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_10" id="account_factor_pr_fee_10" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_10" id="account_factor_pr_sum_10" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct11" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_11"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">11<input type="hidden" name="account_factor_pr_id_11" id="account_factor_pr_id_11"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_11" id="account_factor_pr_name_11" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr11"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_11" id="account_factor_pr_count_11" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_11" id="account_factor_pr_unit_11" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_11" id="account_factor_pr_fee_11" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_11" id="account_factor_pr_sum_11" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct12" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_12"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">12<input type="hidden" name="account_factor_pr_id_12" id="account_factor_pr_id_12"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_12" id="account_factor_pr_name_12" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr12"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_12" id="account_factor_pr_count_12" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_12" id="account_factor_pr_unit_12" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_12" id="account_factor_pr_fee_12" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_12" id="account_factor_pr_sum_12" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct13" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_13"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">13<input type="hidden" name="account_factor_pr_id_13" id="account_factor_pr_id_13"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_13" id="account_factor_pr_name_13" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr13"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_13" id="account_factor_pr_count_13" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_13" id="account_factor_pr_unit_13" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_13" id="account_factor_pr_fee_13" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_13" id="account_factor_pr_sum_13" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct14" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="button" value="x" id="delet_btn_Product_14"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">14<input type="hidden" name="account_factor_pr_id_14" id="account_factor_pr_id_14"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_14" id="account_factor_pr_name_14" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr14"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_14" id="account_factor_pr_count_14" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_14" id="account_factor_pr_unit_14" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_14" id="account_factor_pr_fee_14" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_14" id="account_factor_pr_sum_14" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                            <tr id="trProduct15" style="display: none">
+                                <td style="text-align: center;vertical-align: top;width: 5%;"><input type="button" value="x" id="delet_btn_Product_15"></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%">15<input type="hidden" name="account_factor_pr_id_15" id="account_factor_pr_id_15"></td>
+                                <td style="text-align: center;vertical-align: top;width: 50%"><input type="text" name="account_factor_pr_name_15" id="account_factor_pr_name_15" size="80" style="text-align: right;direction: rtl"><span style='text-align:right;width:50%;float:right;color:blue' id="pr15"></span></td>
+                                <td style="text-align: center;vertical-align: top;width: 5%"><input type="text" name="account_factor_pr_count_15" id="account_factor_pr_count_15" size="4" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 10%"><input type="text" name="account_factor_pr_unit_15" id="account_factor_pr_unit_15" size="10" style="text-align: right;direction: ltr" disabled="disabled"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_fee_15" id="account_factor_pr_fee_15" size="12" style="text-align: left;direction: ltr"></td>
+                                <td style="text-align: center;vertical-align: top;width: 15%"><input type="text" name="account_factor_pr_sum_15" id="account_factor_pr_sum_15" size="20" style="text-align: left;direction: ltr" disabled="disabled"></td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <div align="right">
+                            <table border="0" cellspacing="1" style="border-collapse: collapse" width="980" dir="rtl">
+                                <tr>
+                                    <td valign="top">
+                                        <p style="margin-top: 0; margin-bottom: 0">توضیحات:
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" name="account_factor_is_deliver" id="account_factor_is_deliver" value="ON" checked>
+                                            تحویل داده شده
+                                        </p>
+                                        <p style="margin-top: 0; margin-bottom: 0">
+                                            <textarea rows="2" name="account_factor_comment" id="account_factor_comment" cols="65"></textarea></td>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr>
+                                                <td width="220" align="left">تخفیف</td>
+                                                <td align="left"><input type="text" name="account_factor_discount" id="account_factor_discount" style="text-align: left;direction: ltr" ></td>
+                                                <td width="220" align="left">جمع</td>
+                                                <td align="left">
+                                                    <input type="text" name="account_factor_sum" id="account_factor_sum" style="text-align: left;direction: ltr" disabled="disabled" >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="220" align="left">مقدار پرداختی</td>
+                                                <td align="left"><input type="text" name="account_factor_pay" id="account_factor_pay" style="text-align: left;direction: ltr" ></td>
+                                                <td width="220" align="left">باقیمانده</td>
+                                                <td align="left"><input type="text" name="account_factor_remainder" id="account_factor_remainder" style="text-align: left;direction: ltr"  disabled="disabled"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%">
+            <tr style="background-color: #eaeaf4;height: 40px">
+                <td style="text-align: right;width: 70%;vertical-align: top">
+                    <div style="float: right">
+                        <a id="cancel_Factor" >
+                            لغو
+                        </a>
+                    </div>
+                    <div id="Factor_button" style="position: relative;float: right">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -68,10 +68,11 @@ public class Server extends HttpServlet {
             clazzes.add(Enrolment3.class);
             clazzes.add(Portal.class);
             clazzes.add(PortalUser.class);
+            clazzes.add(Factor.class);
         }
         return clazzes;
     }
-
+    
     protected void run(HttpServletRequest request, HttpServletResponse response, boolean isPost) throws ServletException, IOException {
         Publicresponse = response;
         StringBuffer script = new StringBuffer();
